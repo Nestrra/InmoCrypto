@@ -31,7 +31,7 @@ Esta aplicación móvil en React Native (v0.79.2) muestra cotizaciones de cripto
 3. **Configurar iOS (solo macOS)**
    ```bash
    cd ios
-   pod install --repo-update
+   pod install 
    cd ..
    ```
 
@@ -80,11 +80,11 @@ El proyecto incluye pruebas unitarias con Jest y TypeScript para validar la lóg
 
  **Estructura de tests**:
 
-     ```
+
      __tests__/
      ├── CryptoMapper.test.ts
      └── getCryptoList.test.ts
-     ```
+
   
  **Ejecutar todas las pruebas**:
    ```bash
