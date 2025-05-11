@@ -1,8 +1,8 @@
 InmoCrypto
 
-Esta aplicación móvil en React Native muestra cotizaciones de criptomonedas en USD.
+Esta aplicación móvil en React Native (v0.79.2) muestra cotizaciones de criptomonedas en USD.
 
-Requisitos Previos
+📋 Requisitos Previos
 
 Node.js >= 18.x
 
@@ -10,11 +10,13 @@ Yarn o npm
 
 Watchman (recomendado en macOS)
 
+React Native CLI compatible con RN 0.79.2
+
 Android Studio (para Android)
 
-Xcode (para iOS en macOS)
+Xcode 14.x o superior (para iOS en macOS)
 
-Pasos para Descargar y Ejecutar Localmente
+🚀 Pasos para Descargar y Ejecutar Localmente
 
 Clonar el repositorio
 
@@ -33,7 +35,7 @@ cd ..
 
 Ejecutar en Android
 
-Asegúrate de tener un emulador o dispositivo conectado.
+Inicia un emulador o conecta un dispositivo USB.
 
 En la raíz del proyecto:
 
@@ -41,7 +43,7 @@ npx react-native run-android
 
 Ejecutar en iOS (solo macOS)
 
-Ejecuta en la raíz del proyecto:
+Desde la raíz del proyecto:
 
 npx react-native run-ios --simulator "iPhone 16 Pro"
 
@@ -68,4 +70,4 @@ yarn start --reset-cache
 
 Contacto
 
-Para cualquier duda, contacta a hr@millionluxury.com con tu consulta.
+Para cualquier duda, contacta a nestrra@gmail.com con tu consulta.
