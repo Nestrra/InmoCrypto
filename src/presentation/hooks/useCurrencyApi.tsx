@@ -58,6 +58,38 @@ export const useCurrencyApi = () => {
     setStart(nextStart)
   }
 
+
+const fetchAllPages = async (): Promise<Coin[]> => {
+  const all: Coin[] = [];
+  let start = 0;
+  const LIMIT = 100;
+  let page: Coin[];
+
+  do {
+    page = await getCryptoList(cryptoDBFetcher, { start, limit: LIMIT });
+    all.push(...page);
+    start += LIMIT;
+  } while (page.length === LIMIT); // mientras sigan llegando 100 ítems, hay más páginas
+
+  return all;
+};
+
+const searchCoin = async (query: string) => {
+  setLoading(true);
+  try {
+    // 1) Trae TODO el array de monedas:
+    const allCoins = await fetchAllPages();
+    // 2) Filtra localmente
+    const filtered = allCoins.filter(c =>
+      c.name.toLowerCase().includes(query) ||
+      c.symbol.toLowerCase().includes(query)
+    );
+    setCurrencyList(filtered);
+  } finally {
+    setLoading(false);
+  }
+};
+
   return {
     loading,
     currencyList,

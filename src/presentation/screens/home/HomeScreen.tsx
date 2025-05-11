@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import {
     View,
@@ -13,7 +14,7 @@ import theme from '../../../config/theme/them';
 import { CardCoin } from '../../components/CardCoin';
 import { ScreenLayout } from '../../components/ScreenLayout';
 import { Loading } from '../../components/Loading';
-const SEARCH_LIMIT = 300;
+const SEARCH_LIMIT = 15000;
 const DEFAULT_LIMIT = 80;
 /**
  * Pantalla principal donde se listan y filtran las criptomonedas.
@@ -36,7 +37,7 @@ export const HomeScreen: React.FC = () => {
 
     useEffect(() => {
         if (searchQuery.trim().length > 0) {
-           
+
             fetchList(SEARCH_LIMIT);
         } else {
 
@@ -69,12 +70,16 @@ export const HomeScreen: React.FC = () => {
     };
 
 
+    if (loading && searchQuery.trim() === '') {
+        return <ScreenLayout><Loading /></ScreenLayout> 
+    }
+
 
     return (
         <ScreenLayout>
-            {
-                loading ? <Loading /> :
-                 <FlatList
+
+
+            <FlatList
                 data={filteredList}
                 keyExtractor={item => item.id}
                 renderItem={({ item }) => <CardCoin item={item} />}
@@ -86,6 +91,9 @@ export const HomeScreen: React.FC = () => {
                         <View style={styles.containerInput}>
 
                             <TextInput
+                                left={<TextInput.Icon icon="search-outline"/>}
+                                autoCorrect={false}
+                                autoComplete='off'
                                 placeholderTextColor={'#7e7f80'}
                                 textColor='#ffffff'
                                 placeholder="Buscar criptomoneda"
@@ -122,9 +130,9 @@ export const HomeScreen: React.FC = () => {
                     ) : null
                 }
             />
-            }
 
-           
+
+
         </ScreenLayout>
     );
 };
@@ -132,10 +140,10 @@ export const HomeScreen: React.FC = () => {
 const styles = StyleSheet.create({
     containerInput: {
         alignItems: 'center',
-        marginBottom:18
+        marginBottom: 18
     },
     input: {
-        width: '96%',
+        width: '99%',
         maxWidth: 400,
         backgroundColor: '#1e293b',
         borderRadius: 5,
