@@ -1,3 +1,7 @@
+
+/**
+ * Entidad de dominio que representa una criptomoneda con todos sus datos relevantes.
+ */
 export interface Coin {
 
     id: string;

@@ -6,7 +6,17 @@ import type { Result } from "../interfaces/cryptocurrency.responses";
 
 export class CryptoMapper {
 
-
+  /**
+   * Transforma un objeto Result (estructura de la respuesta JSON)
+   * en una instancia de Coin (modelo de la aplicación).
+   *
+   * @param {Result} result - Objeto obtenido desde la API de CoinLore.
+   * @returns {Coin} - Entidad de dominio con los campos tipados.
+   *
+   * @example
+   * const raw: Result = await fetcher.get<Result>(...);
+   * const coinEntity: Coin = CryptoMapper.fromCryptoDBResultToEntity(raw);
+   */
     static fromCryptoDBResultToEntity(result:Result):Coin{
       
     return{
@@ -27,11 +37,7 @@ export class CryptoMapper {
     tsupply: result.tsupply,
     msupply: result.msupply,
 
-
 }
-
     }
-
-  
 
 }

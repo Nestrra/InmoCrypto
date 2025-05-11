@@ -21,12 +21,18 @@ import { formatUSD } from '../../../utils/formatCurrency';
 import { Loading } from '../../components/Loading';
 import theme from '../../../config/theme/them';
 import { useNavigation } from '@react-navigation/native';
-
-
-
-
 interface Props extends StackScreenProps<RootStackParams, 'Detail'> { }
-
+/**
+ * Pantalla de detalle para una criptomoneda.
+ * Muestra información extendida:  rank, precio, cambios porcentuales y métricas de mercado.
+ *
+ * @component
+ * @param {Props} props - Props de navegación proporcionadas por React Navigation.
+ * @param {Object} props.route.params - Parámetros de ruta.
+ * @param {string} props.route.params.id - ID de la criptomoneda a mostrar.
+ * @example
+ * <Stack.Screen name="Detail" component={DetailScreen} />
+ */
 export const DetailScreen = ({ route }: Props) => {
 
   const { id } = route.params

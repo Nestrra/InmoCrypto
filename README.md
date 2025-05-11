@@ -1,73 +1,96 @@
-InmoCrypto
+# InmoCrypto
 
 Esta aplicación móvil en React Native (v0.79.2) muestra cotizaciones de criptomonedas en USD.
 
-📋 Requisitos Previos
+---
 
-Node.js >= 18.x
+## 📋 Requisitos Previos
 
-Yarn o npm
+- **Node.js** >= 18.x
+- **Yarn** o **npm**
+- **Watchman** (recomendado en macOS)
+- **React Native CLI** compatible con RN 0.79.2
+- **Android Studio** (para Android)
+- **Xcode** 14.x o superior (para iOS en macOS)
 
-Watchman (recomendado en macOS)
+---
 
-React Native CLI compatible con RN 0.79.2
+## 🚀 Pasos para Descargar y Ejecutar Localmente
 
-Android Studio (para Android)
+1. **Clonar el repositorio**
+   ```bash
+   git clone https://github.com/TU_USUARIO/InmoCrypto.git
+   cd InmoCrypto
+   ```
 
-Xcode 14.x o superior (para iOS en macOS)
+2. **Instalar dependencias**
+   ```bash
+   npm install       # o yarn install
+   ```
 
-🚀 Pasos para Descargar y Ejecutar Localmente
+3. **Configurar iOS (solo macOS)**
+   ```bash
+   cd ios
+   pod install --repo-update
+   cd ..
+   ```
 
-Clonar el repositorio
+4. **Ejecutar en Android**
+   - Inicia un emulador o conecta un dispositivo USB.
+   - En la raíz del proyecto:
+     ```bash
+     npx react-native run-android
+     ```
 
-git clone https://github.com/TU_USUARIO/InmoCrypto.git
-cd InmoCrypto
+5. **Ejecutar en iOS (solo macOS)**
+   - Desde la raíz del proyecto:
+     ```bash
+     npx react-native run-ios 
+     ```
+   - O abre `ios/InmoCrypto.xcworkspace` en Xcode y presiona **Run**.
 
-Instalar dependencias
+6. **Uso de la App**
+   - La pantalla principal lista las criptomonedas con su precio en USD.
+   - Puedes filtrar escribiendo en el buscador.
+   - Al pulsar una moneda, entras al detalle con información extendida.
 
-npm install       # o yarn install
+---
 
-Configurar iOS (solo macOS)
+## 🖼️ Imágenes 
 
-cd ios
-pod install --repo-update
-cd ..
+Para agregar capturas de pantalla o diagramas:
 
-Ejecutar en Android
+   ```md
+   ![Pantalla Principal](docs/images/iosHome.png)
+   ![Pantalla Principal](docs/images/androidHome.png)
+    ![Pantalla Principal](docs/images/iosDetail.png)
+   ![Pantalla Principal](docs/images/androidDetail.png)
+   ```
 
-Inicia un emulador o conecta un dispositivo USB.
 
-En la raíz del proyecto:
 
-npx react-native run-android
+## 📞 Contacto
 
-Ejecutar en iOS (solo macOS)
+Para cualquier duda o reporte, contacta a **[nestrra@gmail.com](mailto:nestrra@gmail.com)**.
 
-Desde la raíz del proyecto:
+---
 
-npx react-native run-ios --simulator "iPhone 16 Pro"
+## 🧪 Pruebas Unitarias
 
-O abre ios/InmoCrypto.xcworkspace en Xcode y presiona Run.
+El proyecto incluye pruebas unitarias con Jest y TypeScript para validar la lógica de mapeo y casos de uso.
 
-Uso de la App
 
-La pantalla principal lista las criptomonedas con su precio en USD.
+ **Estructura de tests**:
+   - Pon los archivos en `__tests__/`, por ejemplo:
+     ```
+     __tests__/
+     ├── CryptoMapper.test.ts
+     └── getCryptoList.test.ts
+     ```
+   - O junto a los módulos con extensión `.test.ts`, p.ej. `crypto.mapper.test.ts`.
+ **Ejecutar todas las pruebas**:
+   ```bash
+   npm test
+   ```
 
-Puedes filtrar escribiendo en el buscador.
-
-Al pulsar una moneda, entras al detalle con información extendida.
-
-Limpieza de Caché (Opcional)
-
-Si encuentras problemas de cache o peticiones, puedes reiniciar:
-
-# Elimina nodemodules y reinstala
-enforce windows-line-endings
-rm -rf node_modules ios/Pods ios/Pods.lock
-npm install
-cd ios && pod install
-yarn start --reset-cache
-
-Contacto
-
-Para cualquier duda, contacta a nestrra@gmail.com con tu consulta.
+---

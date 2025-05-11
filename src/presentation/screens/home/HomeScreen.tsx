@@ -13,9 +13,20 @@ import theme from '../../../config/theme/them';
 import { CardCoin } from '../../components/CardCoin';
 import { ScreenLayout } from '../../components/ScreenLayout';
 import { Loading } from '../../components/Loading';
-
 const SEARCH_LIMIT = 300;
 const DEFAULT_LIMIT = 80;
+/**
+ * Pantalla principal donde se listan y filtran las criptomonedas.
+ *
+ * Usa:
+ * - `useCurrencyApi` para obtener el array de `Coin` y controlar carga/paginación.
+ * - `FlatList` con pull-to-refresh y scroll infinito.
+ * - `CardCoin` para renderizar cada elemento.
+ *
+ * @component
+ * @example
+ * <Stack.Screen name="Home" component={HomeScreen} />
+ */
 
 export const HomeScreen: React.FC = () => {
     const { loading, currencyList, nextPage, fetchList } = useCurrencyApi();

@@ -11,7 +11,7 @@ import { DetailScreen } from '../screens/detail/DetailScreen';
 
  }
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<RootStackParams>();
 
 export const Navigation = () => {
   return (
