@@ -58,14 +58,12 @@ Esta aplicación móvil en React Native (v0.79.2) muestra cotizaciones de cripto
 
 ## 🖼️ Imágenes 
 
-Para agregar capturas de pantalla o diagramas:
 
-   ```md
    ![Pantalla Principal](docs/images/iosHome.png)
    ![Pantalla Principal](docs/images/androidHome.png)
     ![Pantalla Principal](docs/images/iosDetail.png)
    ![Pantalla Principal](docs/images/androidDetail.png)
-   ```
+
 
 
 
@@ -81,13 +79,13 @@ El proyecto incluye pruebas unitarias con Jest y TypeScript para validar la lóg
 
 
  **Estructura de tests**:
-   - Pon los archivos en `__tests__/`, por ejemplo:
+
      ```
      __tests__/
      ├── CryptoMapper.test.ts
      └── getCryptoList.test.ts
      ```
-   - O junto a los módulos con extensión `.test.ts`, p.ej. `crypto.mapper.test.ts`.
+  
  **Ejecutar todas las pruebas**:
    ```bash
    npm test
