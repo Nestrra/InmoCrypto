@@ -19,7 +19,7 @@ Esta aplicación móvil en React Native (v0.79.2) muestra cotizaciones de cripto
 
 1. **Clonar el repositorio**
    ```bash
-   git clone https://github.com/TU_USUARIO/InmoCrypto.git
+   git clone https://github.com/Nestrra/InmoCrypto.git
    cd InmoCrypto
    ```
 
